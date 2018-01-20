@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import PixelTokenContract from '../build/contracts/EIP20.json'
 import getWeb3 from './utils/getWeb3'
+import { StyleSheet, css } from 'aphrodite';
+import RaisedButton from 'material-ui/RaisedButton';
 
-import BalanceCheck from './components/balanceCheck'
-import PurchaseToken from './components/purchaseToken'
-import Paint from './components/paint'
+import Info from './components/info';
 
 class App extends Component {
   constructor(props) {
@@ -69,13 +69,19 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Pixel Ledger</h1>
-        <PurchaseToken/>
-        <Paint/>
-        <BalanceCheck/>
+        <h1 className={css(styles.title)}>Pixel Party</h1>
+        <Info/>
       </div>
     );
   }
 }
+
+const styles = StyleSheet.create({
+    title: {
+      fontFamily: 'Roboto, sans-serif',
+      fontSize: '35px',
+      fontWeight: '100',
+    }
+})
 
 export default App
